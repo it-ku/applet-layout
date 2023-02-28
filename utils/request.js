@@ -38,6 +38,9 @@ export async function request(url, data, option) {
         }else{
           onError ? onError(res) : toast(res.msg || '请求错误')
         }
+      },
+      fail: (err) => {
+        reject(err)
       }
     })
   })
